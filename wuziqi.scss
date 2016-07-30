@@ -1,0 +1,140 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style:none;
+  font-family: none;
+}
+      body{
+        background-image:url(img/beijing.jpg);
+        background-repeat: no-repeat;
+         background-size: 100%; 
+        
+      }
+%center{
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right: 0;
+  margin: auto;
+}
+$width:600px;
+.qipan{
+  @extend  %center;
+  width: $width;
+  height:$width;
+/*   background:rgba(0.0.0.0.5); */
+}
+.qizi{
+  position: relative;
+  z-index: 10;
+  float:left;
+  width: $width/15-10;
+  height:$width/15-10;
+  margin:5px;
+/*   opacity: 0; */
+}
+.heng{
+  position: absolute;
+  left:$width/30;
+  width: $width - $width/15;
+  height:1px;
+  background:black;
+  transform: translate3d(-1000px, -1000px, 90deg);
+  animation: shuchuxian 0.5s cubic-bezier(0.64, 2.74, 0.82, -0.4) forwards;
+}
+.shu{
+  position: absolute;
+  top: $width/30;
+  width: 1px;
+  height: $width - $width/15;
+  background: black;
+  transform: translate3d(-1000px, -1000px, -90deg);
+  animation: hengchuxian 0.5s cubic-bezier(0.64, 2.74, 0.82, -0.4) forwards;
+}
+.bai{
+  background-image:url(img/baise.png);
+  background-size:90%;
+  background-repeat: no-repeat; 
+/*   opacity: 1;
+transition:all 0.8s ease ; */
+}
+.hei{
+    background-image:url(img/heise.png);
+  background-size:100%;
+/*   opacity: 1; */
+
+  background-repeat: no-repeat;
+  /* transition:all 0.8s ease ; */
+ 
+
+}
+.jiemian{
+  position: absolute;
+  left: 0px;
+
+
+}
+.kaishi {
+  width: 250px;
+  height:100px;
+  color: white;
+  font-size: 30px;
+  line-height: 90px;
+  text-align: center;
+  background-image:url(img/kaishi.png);
+  background-size:100%;
+
+}
+.chonglai {
+  width: 250px;
+  height:100px;
+  color: white;
+  font-size: 30px;
+  line-height: 90px;
+  text-align: center;
+  background-image:url(img/kaishi.png);
+  background-size:100%;
+
+}
+.moshi {
+  width: 250px;
+  height:100px;
+  color: white;
+  font-size: 30px;
+  line-height: 90px;
+  text-align: center;
+  background-image:url(img/kaishi.png);
+  background-size:100%;
+
+}
+
+.jishi{
+  width:0px;
+  height: 100px;
+  height:100px;
+  color: white;
+  font-size: 30px;
+  line-height: 90px;
+  text-align: center;
+  background-image:url(img/kaishi.png);
+  background-repeat: no-repeat; 
+  background-size:100%;
+  margin:auto;
+  position: absolute;
+  left:300px;
+  top:0px;
+  opacity: 0;
+  display: none;
+}
+
+
+@for $i from 0 through 14{
+  b:nth-of-type(#{$i+1}){
+    top:$i*$width/15 + $width/30;
+  }
+  i:nth-of-type(#{$i+1}){
+    left: $i*$width/15 + $width/30;
+  }
+}
+
